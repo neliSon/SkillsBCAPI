@@ -16,18 +16,32 @@ class MasterViewController: UIViewController, TagListViewDelegate {
     @IBOutlet weak var tagListView: TagListView!
     
     var selectedSpecialties = Set<String>()
+    var mentors = [Mentor]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         tagListView.delegate = self
         populateWithTags()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: Actions.
+    @IBAction func showMentorsButton(sender: UIButton) {
+        if selectedSpecialties.count != 0 {
+            // search for mentors with specialties
+            // segue to next view controller
+            fetchMentors()
+        } else {
+            // error message
+        }
+    }
+    
 
     // MARK: General Functions.
     
@@ -55,6 +69,31 @@ class MasterViewController: UIViewController, TagListViewDelegate {
             selectedSpecialties.remove(title)
 //            print(selectedSpecialties)
         }
+    }
+    
+    func fetchMentors() {
+        let URLString = "http://skillsbc.vansortium.com/mentors"
+        let baseURL = NSURL(string: URLString)!
+        let session = NSURLSession.sharedSession()
+        
+        let task = session.dataTaskWithURL(baseURL) { (data, response, error) in
+            if (error != nil) {
+                return
+            }
+            if let jsonUnformattedArray = try? NSJSONSerialization.JSONObjectWithData(data!, options: []),
+            let jsonMentorsArray = jsonUnformattedArray as? [[String:NSObject]]{
+                
+                for mentor in jsonMentorsArray {
+                    print ("mentor is \(mentor)")
+                    
+                    let myMentor = Mentor(dictionary: mentor)
+                    
+                    self.mentors.append(myMentor)
+                }
+            }
+        }
+        
+        task.resume()
     }
 }
 

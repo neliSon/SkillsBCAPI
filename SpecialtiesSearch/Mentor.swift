@@ -55,35 +55,39 @@ enum Specialties: String {
 
 }
 
-struct Mentor {
+class Mentor {
     let id: String
-    let firstName: String
-    let lastName: String
-    let specialties = [String]()
-    let location = [Float]()
+    let firstName: String?
+    let lastName: String?
+    var specialties: [String]?
+    var location: [Float]?
     
     // additional mentor information
-    let email: String?
-    let phoneNumber: String?
-    let twitter: String?
-    let skype: String?
-    let slack: String?
-    let githubUsername: String?
-    let avatarURLString: String?
-    let createdAt: String?
-    let updatedAt: String?
-    let isAdmin: Bool?
-    let companyName: String?
-    let companyURLString: String?
-    let bio: String?
-    let quirkyFact: String?
-    let isOnDuty: Bool?
+    var email: String?
+    var phoneNumber: String?
+    var twitter: String?
+    var skype: String?
+    var slack: String?
+    var githubUsername: String?
+    var avatarURLString: String?
+    var createdAt: String?
+    var updatedAt: String?
+    var isAdmin: Bool?
+    var companyName: String?
+    var companyURLString: String?
+    var bio: String?
+    var quirkyFact: String?
+    var isOnDuty: Bool?
     
-//    init(id: String, firstName: String , lastName: String) {
-//        self.id = id
-//        self.firstName = firstName
-//        self.lastName = lastName
-//        
-//    }
+    init(dictionary: [String:NSObject]) {
+        self.id = dictionary["_id"] as! String
+        self.firstName = dictionary["first_name"] as? String
+        self.lastName = dictionary["last_name"] as? String
+        self.specialties = dictionary["specialties"] as? [String]
+        self.location = dictionary["location"] as? [Float]
+
+//        self.email = String(dictionary["email"])
+//        self.phoneNumber = String(dictionary["phone"])
+    }
     
 }
