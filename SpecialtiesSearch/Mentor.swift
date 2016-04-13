@@ -52,6 +52,7 @@ enum Specialties: String {
     case WordPress = "WordPress"
     
     static let allValues = [C, Python, Java, JavaScript, Ruby, Rails, PHP, React, Ember, Angular, NodeJS, Backbone, Phonegap, jQuery, iOS, ObjectiveC, Swift, Linux, CoffeeScript, Bash, SQL, Vim, QBasic, CSS, GameDevelopment, LEMP, HTML, Sinatra, Sass, Lisp, Beer, Algorithms, Mongo, Devops, Assembler, Pascal, Fortran, Cobol, Basic, VisualBasic, WordPress]
+
 }
 
 struct Mentor {
