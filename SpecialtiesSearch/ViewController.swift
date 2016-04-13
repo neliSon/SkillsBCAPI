@@ -8,8 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class MasterViewController: UIViewController {
+    
+    // MARK: properties
+    @IBOutlet weak var mentorSearchBar: UISearchBar!
+    @IBOutlet weak var tagListView: TagListView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

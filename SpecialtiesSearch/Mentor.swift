@@ -8,6 +8,50 @@
 
 import UIKit
 
+enum Specialties: String {
+    case C = "C/C++/C#"
+    case Python = "Python"
+    case Java = "Java"
+    case JavaScript = "JavaScript"
+    case Ruby = "Ruby"
+    case Rails = "Rails"
+    case PHP = "PHP"
+    case React = "React"
+    case Ember = "Ember"
+    case Angular = "Angular"
+    case NodeJS = "NodeJS"
+    case Backbone = "Backbone"
+    case Phonegap = "Phonegap"
+    case jQuery = "jQuery"
+    case iOS = "iOS"
+    case ObjectiveC = "Objective-C"
+    case Swift = "Swift"
+    case Linux = "Linux"
+    case CoffeeScript = "CoffeeScript"
+    case Bash = "Bash"
+    case SQL = "SQL"
+    case Vim = "Vim"
+    case QBasic = "QBasic"
+    case CSS = "CSS"
+    case GameDevelopment = "Game Development"
+    case LEMP = "LEMP"
+    case HTML = "HTML"
+    case Sinatra = "Sinatra"
+    case Sass = "Sass"
+    case Lisp = "Lisp"
+    case Beer = "Beer"
+    case Algorithms = "Algorithms"
+    case Mongo = "Mongo"
+    case Devops = "Devops"
+    case Assembler = "Assembler"
+    case Pascal = "Pascal"
+    case Fortran = "Fortran"
+    case Cobol = "Cobol"
+    case Basic = "Basic"
+    case VisualBasic = "VisualBasic"
+    case WordPress = "WordPress"
+}
+
 struct Mentor {
     let id: String
     let firstName: String
