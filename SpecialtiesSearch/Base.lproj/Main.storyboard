@@ -25,13 +25,6 @@
                                 <rect key="frame" x="8" y="72" width="359" height="16"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ssj-nb-s91" customClass="TagListView" customModule="TagListView">
-                                <rect key="frame" x="8" y="492" width="359" height="125"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="125" id="VQs-Fv-3zg"/>
-                                </constraints>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fv8-N2-f6r">
                                 <rect key="frame" x="237" y="629" width="130" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -43,12 +36,9 @@
                             <constraint firstAttribute="trailing" secondItem="KRI-a6-VmR" secondAttribute="trailing" id="IC6-Wc-Z2k"/>
                             <constraint firstAttribute="trailing" secondItem="6MU-6n-P0H" secondAttribute="trailing" constant="8" id="JS3-Rz-GkB"/>
                             <constraint firstItem="KRI-a6-VmR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="M08-yT-g2r"/>
-                            <constraint firstAttribute="trailing" secondItem="ssj-nb-s91" secondAttribute="trailing" constant="8" id="PvR-yu-eJH"/>
-                            <constraint firstItem="ssj-nb-s91" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="dF8-PF-W4L"/>
                             <constraint firstItem="6MU-6n-P0H" firstAttribute="top" secondItem="KRI-a6-VmR" secondAttribute="bottom" constant="8" id="dM6-8j-9yh"/>
                             <constraint firstItem="KRI-a6-VmR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="e9c-Ay-0gb"/>
                             <constraint firstItem="6MU-6n-P0H" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="oAF-FU-Ubm"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ssj-nb-s91" secondAttribute="bottom" constant="50" id="qu4-fj-Iq9"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
