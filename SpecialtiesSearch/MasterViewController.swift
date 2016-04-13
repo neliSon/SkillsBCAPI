@@ -34,8 +34,8 @@ class MasterViewController: UIViewController, TagListViewDelegate {
     // MARK: Actions
     @IBAction func showMentorsButton(sender: UIButton) {
         if selectedSpecialties.count != 0 {
-            // search for mentors with specialties
-            // segue to next view controller
+            // filter for mentors with specialties
+            
             
         } else {
             // error message
@@ -46,11 +46,25 @@ class MasterViewController: UIViewController, TagListViewDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowMentorsSegue" {
             let mentorsTVC = segue.destinationViewController as! MentorsTableViewController
-            mentorsTVC.mentors = mentors
             
+            var filteredMentors = [Mentor]()
+            
+            for mentor in mentors {
+                for specialty in selectedSpecialties {
+                    
+                    if let mentorSpecialties = mentor.specialties {
+                        if mentorSpecialties.contains(specialty) {
+                            filteredMentors.append(mentor)
+                            break
+                        }
+                    }
+                }
+                
+            }
+            mentorsTVC.mentors = filteredMentors
         }
     }
-
+    
     // MARK: General Functions
     func populateWithTags() {
         // Create tags of all specialties.
