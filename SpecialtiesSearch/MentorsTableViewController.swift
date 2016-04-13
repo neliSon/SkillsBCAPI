@@ -16,7 +16,7 @@ class MentorsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        configureCell()
     }
 
     // MARK: - Table view data source
@@ -33,17 +33,29 @@ class MentorsTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("MentorTableViewCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("MentorTableViewCell", forIndexPath: indexPath) as! MentorTableViewCell
 
         let mentor = mentors[indexPath.row]
         
-        cell.textLabel?.text = mentor.firstName
-
+        if let lastName = mentor.lastName {
+            cell.mentorNameLabel.text = mentor.firstName! + " " + lastName
+        }else{
+            cell.mentorNameLabel.text = mentor.firstName!
+        }
+        
+        if let mentorSpecialties = mentor.specialties {
+            let specialtyString = mentorSpecialties.joinWithSeparator(" + ")
+            cell.specialtiesLabel.text = specialtyString
+        }
         return cell
     }
  
 
-    // MARK: - Navigation
+    // MARK: - General Functions
+    func configureCell() {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 65.0
+    }
 
-
+    
 }

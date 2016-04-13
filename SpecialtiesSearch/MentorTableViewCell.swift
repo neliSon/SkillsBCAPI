@@ -9,7 +9,11 @@
 import UIKit
 
 class MentorTableViewCell: UITableViewCell {
-
+    
+    // MARK: Properties
+    @IBOutlet weak var mentorNameLabel: UILabel!
+    @IBOutlet weak var specialtiesLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
