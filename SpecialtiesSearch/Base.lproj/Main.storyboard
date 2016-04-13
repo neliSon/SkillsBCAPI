@@ -34,7 +34,7 @@
                                 </state>
                                 <connections>
                                     <action selector="showMentorsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nTB-tI-tOx"/>
-                                    <segue destination="eUY-lJ-3On" kind="show" id="q07-Qe-qUs"/>
+                                    <segue destination="eUY-lJ-3On" kind="show" identifier="ShowMentorsSegue" id="q07-Qe-qUs"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -58,21 +58,30 @@
             </objects>
             <point key="canvasLocation" x="244.5" y="316.5"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Mentors Table View Controller-->
         <scene sceneID="b1j-XP-FzX">
             <objects>
-                <tableViewController id="eUY-lJ-3On" sceneMemberID="viewController">
+                <tableViewController id="eUY-lJ-3On" customClass="MentorsTableViewController" customModule="SpecialtiesSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="XmH-6I-PQ4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MentorTableViewCell" id="zGc-6Y-8xU" customClass="MentorTableViewCell" customModule="SpecialtiesSearch" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MentorTableViewCell" textLabel="cMW-1G-wCt" style="IBUITableViewCellStyleDefault" id="zGc-6Y-8xU" customClass="MentorTableViewCell" customModule="SpecialtiesSearch" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zGc-6Y-8xU" id="DrC-jq-nWQ">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cMW-1G-wCt">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>

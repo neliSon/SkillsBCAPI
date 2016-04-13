@@ -23,7 +23,7 @@ class MasterViewController: UIViewController, TagListViewDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         tagListView.delegate = self
         populateWithTags()
-        
+        fetchMentors()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,22 +31,29 @@ class MasterViewController: UIViewController, TagListViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: Actions.
+    // MARK: Actions
     @IBAction func showMentorsButton(sender: UIButton) {
         if selectedSpecialties.count != 0 {
             // search for mentors with specialties
             // segue to next view controller
-            fetchMentors()
+            
         } else {
             // error message
         }
     }
     
+    // MARK: Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowMentorsSegue" {
+            let mentorsTVC = segue.destinationViewController as! MentorsTableViewController
+            mentorsTVC.mentors = mentors
+            
+        }
+    }
 
-    // MARK: General Functions.
-    
+    // MARK: General Functions
     func populateWithTags() {
-        // create tags of all specialties
+        // Create tags of all specialties.
         for specialties in Specialties.allValues {
             tagListView.textFont = UIFont.systemFontOfSize(20)
             tagListView.tagBackgroundColor = UIColor.orangeColor()
@@ -94,6 +101,7 @@ class MasterViewController: UIViewController, TagListViewDelegate {
         }
         
         task.resume()
+        
     }
 }
 
